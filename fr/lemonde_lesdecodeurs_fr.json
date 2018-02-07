@@ -1,0 +1,36 @@
+{
+  "PageName": "Le monde - Les décodeurs",
+  "Reference": "http://www.lemonde.fr/les-decodeurs/",
+  "TitleTemplate": {
+    "XPath": "/html/head/title"
+  },
+  "TextTemplate": {
+    "XPath": "/html/head/meta[@name=\"description\"]/@content"
+  },
+  "IconUrlTemplate": {
+    "XPath": "/html/head/link[@rel=\"shortcut icon\" or @rel=\"icon\"]/@href"
+  },
+  "Sections": [
+    {
+      "SectionName": "Titres",
+      "XPathFilter": "//section[@class=\"titres\"]",
+      "Articles": [
+        {
+          "XPathFilter": ".//article",
+          "TitleTemplate": {
+            "XPath": "./*/h2/text()"
+          },
+          "TextTemplate": {
+            "XPath": "./p"
+          },
+          "IconUrlTemplate": {
+            "XPath": ".//img/@src"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": ".//a/@href"
+          }
+        }
+      ]
+    }
+  ]
+}

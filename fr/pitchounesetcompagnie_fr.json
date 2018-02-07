@@ -1,0 +1,30 @@
+{
+  "PageName": "Pitchounes & Compagnie",
+  "Reference": "http://pitchounesetcompagnie.fr/",
+  "TitleTemplate": {
+    "XPath": "/html/head/title"
+  },
+  "Sections": [
+    {
+      "SectionName": "Actualités",
+      "XPathFilter": ".//div[@id=\"news\"]",
+      "TitleTemplate": {
+        "XPath": "./p"
+      },
+      "Articles": [
+        {
+          "XPathFilter": ".//div[@class=\"slide\"]",
+          "TitleTemplate": {
+            "XPath": "./div[@class=\"NewsSummaryLink\"]/a"
+          },
+          "TextTemplate": {
+            "XPath": "./div[@class=\"NewsSummaryContent\"]//text()"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": "./div/a/@href"
+          }
+        }
+      ]
+    }
+  ]
+}

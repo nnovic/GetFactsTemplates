@@ -1,0 +1,36 @@
+{
+  "PageName": "Téléstar",
+  "Reference": "https://www.telestar.fr/programme-tv/grille",
+  "TitleTemplate": {
+    "XPath": "/html/head/title"
+  },
+  "TextTemplate": {
+    "XPath": "/html/head/meta[@name=\"description\"]/@content"
+  },
+  "IconUrlTemplate": {
+    "XPath": "/html/head/link[@rel=\"shortcut icon\" or @rel=\"icon\"]/@href"
+  },
+  "Sections": [
+    {
+      "SectionName": "Programme du soir",
+      "XPathFilter": "//div[@id=\"grid\"]/table[@class=\"grid-content\"]",
+      "Articles": [
+        {
+          "XPathFilter": "./tr/td[2]",
+          "TitleTemplate": {
+            "XPath": ".//p[@class=\"title\"]//text()"
+          },
+          "TextTemplate": {
+            "XPath": ".//p[@class=\"synopsis\"]"
+          },
+          "IconUrlTemplate": {
+            "XPath": ".//img[@class=\"thumbnail\"]/@src"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": ".//a[@class=\"lien-fiche\"]/@href"
+          }
+        }
+      ]
+    }
+  ]
+}

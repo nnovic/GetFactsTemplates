@@ -1,0 +1,53 @@
+{
+  "PageName": "Désintox - Libération",
+  "Reference": "http://www.liberation.fr/desintox",
+  "TitleTemplate": {
+    "XPath": "/html/head/title",
+    "Regex": ""
+  },
+  "TextTemplate": {
+    "XPath": "/html/head/meta[@name=\"description\"]/@content"
+  },
+  "IconUrlTemplate": {
+    "XPath": "/html/head/link[@rel=\"shortcut icon\"]/@href"
+  },
+  "Sections": [
+    {
+      "SectionName": "Live items",
+      "XPathFilter": "//ul[@class=\"live-items\"]",
+      "Articles": [
+        {
+          "XPathFilter": "./li/a[@class=\"tag-first-item-link\"]",
+          "TitleTemplate": {
+            "XPath": ".//span[@class=\"slug\"]",
+            "Regex": ""
+          },
+          "TextTemplate": {
+            "XPath": ".//h3"
+          },
+          "IconUrlTemplate": {
+            "XPath": ".//img/@src"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": "./@href"
+          }
+        },
+        {
+          "XPathFilter": "./li/div[@class=\"live-content\"]",
+          "TitleTemplate": {
+            "XPath": "./div/h3/a"
+          },
+          "TextTemplate": {
+            "XPath": "./div/p"
+          },
+          "IconUrlTemplate": {
+            "XPath": ".//img[@class=\"live-image\"]/@src"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": "./div/h3/a/@href"
+          }
+        }
+      ]
+    }
+  ]
+}

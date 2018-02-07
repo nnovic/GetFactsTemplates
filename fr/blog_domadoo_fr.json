@@ -1,0 +1,33 @@
+{
+  "PageName": "Blog Domadoo",
+  "Reference": "https://blog.domadoo.fr",
+  "TitleTemplate": {
+    "XPath": "/html/head/title"
+  },
+  "IconUrlTemplate": {
+    "XPath": "/html/head/link[@rel=\"shortcut icon\" or @rel=\"icon\"]/@href"
+  },
+  "Sections": [
+    {
+      "SectionName": "",
+      "XPathFilter": "//div[@class=\"row\"]",
+      "Articles": [
+        {
+          "XPathFilter": ".//article",
+          "TitleTemplate": {
+            "XPath": "./h2/a"
+          },
+          "TextTemplate": {
+            "XPath": "./div/p"
+          },
+          "IconUrlTemplate": {
+            "XPath": "./a/img/@src"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": "./h2/a/@href"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "PageName": "Journée mondiale",
+  "Reference": "http://www.journee-mondiale.com/",
+  "TitleTemplate": {
+    "XPath": "/html/head/title"
+  },
+  "IconUrlTemplate": {
+    "XPath": "//a[@id=\"logo\"]/img/@src"
+  },
+  "Sections": [
+    {
+      "SectionName": "Aujourd'hui",
+      "XPathFilter": "//div[@id=\"journeesDuJour\"]",
+      "Articles": [
+        {
+          "XPathFilter": "./article",
+          "TitleTemplate": {
+            "XPath": "./a/h2"
+          },
+          "TextTemplate": {
+            "XPath": "./p"
+          },
+          "IconUrlTemplate": {
+            "XPath": "./a/figure/img/@src"
+          },
+          "BrowserUrlTemplate": {
+            "XPath": "./a/@href"
+          }
+        }
+      ]
+    }
+  ]
+}
